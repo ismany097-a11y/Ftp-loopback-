@@ -8,51 +8,46 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sender Configuration"
-        android:textSize="20sp"
+        android:text="Configure Folder Monitoring &amp; Port Mapping"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monitor Folder:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etMonitorFolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="/sdcard/Downloads"
         android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Configure Folder Monitoring & Port Mapping"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp" />
-
-    <Switch
-        android:id="@+id/switchBackgroundService"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enable Background Service"
-        android:layout_marginBottom="16dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewSender"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="16dp" />
-
-    <Button
-        android:id="@+id/btnAddFolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add New Folder Monitoring"
+        android:text="Target Port:"
+        android:textSize="16sp"
         android:layout_marginBottom="8dp" />
 
-    <Button
-        android:id="@+id/btnSaveSender"
+    <EditText
+        android:id="@+id/etTargetPort"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Configuration"
-        android:layout_marginBottom="8dp" />
+        android:hint="5151"
+        android:inputType="number"
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@+id/btnBackSender"
+        android:id="@+id/btnSaveConfig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back to Main" />
+        android:text="Save Sender Configuration"
+        android:textSize="16sp" />
 
 </LinearLayout>

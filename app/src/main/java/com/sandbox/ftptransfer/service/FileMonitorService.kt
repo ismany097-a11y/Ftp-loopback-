@@ -7,6 +7,7 @@ import android.util.Log
 import com.sandbox.ftptransfer.utils.PortManager
 import com.sandbox.ftptransfer.model.SenderSettings
 import com.sandbox.ftptransfer.model.FolderMonitorConfig
+import com.sandbox.ftptransfer.model.FileAction
 import com.google.gson.Gson
 import kotlinx.coroutines.*
 import java.io.*
@@ -135,7 +136,8 @@ class FileMonitorService : Service() {
     private suspend fun sendFileToReceiver(file: File, config: FolderMonitorConfig) {
         Log.d(TAG, "Attempting to send file: ${file.name} to port: ${config.targetPort}")
 
-        val socket = PortManager.connectToPort(config.targetPort)
+        // FIX: Gunakan connectToServer bukan connectToPort
+        val socket = PortManager.connectToServer(config.targetPort)
 
         if (socket == null) {
             Log.e(TAG, "Failed to connect to server on port ${config.targetPort}")

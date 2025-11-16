@@ -1,5 +1,7 @@
 package com.sandbox.ftptransfer.model
 
+import java.io.File  // TAMBAHKAN IMPORT INI
+
 data class AutoDetectSettings(
     val enabled: Boolean = true,
     val allowedExtensions: Set<String> = setOf("jpg", "jpeg", "png", "gif", "mp4", "mov", "avi", "pdf", "txt"),

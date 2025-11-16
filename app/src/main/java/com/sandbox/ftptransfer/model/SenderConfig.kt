@@ -10,10 +10,12 @@ data class FolderMonitorConfig(
     val folderName: String,
     val targetPort: Int,
     val fileAction: FileAction = FileAction.COPY,
-    val enabled: Boolean = true
+    val enabled: Boolean = true,
+    val monitoringSettings: MonitoringSettings = MonitoringSettings.default() // INTEGRASI DELAY
 ) {
     fun getDisplayName(): String {
-        return "$folderName → Port $targetPort ($fileAction)"
+        val delayText = if (monitoringSettings.delaySeconds == 0) "real-time" else "${monitoringSettings.delaySeconds}s"
+        return "$folderName → Port $targetPort ($fileAction) - Scan: $delayText"
     }
 }
 
@@ -34,19 +36,22 @@ data class SenderSettings(
                     folderPath = "/Pictures/Screenshots/",
                     folderName = "Screenshots",
                     targetPort = 5152,
-                    fileAction = FileAction.MOVE
+                    fileAction = FileAction.MOVE,
+                    monitoringSettings = MonitoringSettings(delaySeconds = 2)
                 ),
                 FolderMonitorConfig(
                     folderPath = "/Downloads/",
                     folderName = "Downloads",
                     targetPort = 5153,
-                    fileAction = FileAction.COPY
+                    fileAction = FileAction.COPY,
+                    monitoringSettings = MonitoringSettings(delaySeconds = 5)
                 ),
                 FolderMonitorConfig(
                     folderPath = "/DCIM/Camera/",
                     folderName = "Camera",
                     targetPort = 5154,
-                    fileAction = FileAction.MOVE
+                    fileAction = FileAction.MOVE,
+                    monitoringSettings = MonitoringSettings(delaySeconds = 3)
                 )
             )
         }

@@ -8,7 +8,7 @@
     android:layout_margin="4dp">
 
     <TextView
-        android:id="@+id/tvFolderSender"
+        android:id="@+id/tvFolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Folder: Not selected"
@@ -16,7 +16,7 @@
         android:layout_marginBottom="8dp" />
 
     <Button
-        android:id="@+id/btnSelectFolderSender"
+        android:id="@+id/btnSelectFolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Folder to Monitor"
@@ -31,22 +31,54 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Target Port:"
+            android:text="Port:"
             android:textSize="14sp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="8dp" />
 
         <EditText
-            android:id="@+id/etPortSender"
+            android:id="@+id/etPort"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:text="5152"
             android:textSize="14sp" />
 
         <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
+            android:layout_width="8dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delay:"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etDelay"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sec"
+            android:textSize="12sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,12 +93,42 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content" />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="#FF0000" />
+
     </LinearLayout>
 
-    <Switch
-        android:id="@+id/switchEnabledSender"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enable Monitoring" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <Switch
+            android:id="@+id/switchEnabled"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enable Monitoring"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:textColor="#4CAF50"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
